@@ -1,0 +1,167 @@
+package assignments;
+
+import global.Cod;
+
+public class Optional_01 
+{
+	public static void main(String[] args) 
+	{
+		String selectionString;
+		int selection = 0;
+
+		do
+		{
+			boolean valid = false;
+			
+			System.out.println("1. Calculate the area of a Circle");
+			System.out.println("2. Calculate the area of a Rectangle");
+			System.out.println("3. Calculate the area of a Triangle");
+			System.out.println("4. Quit");
+			System.out.print("Enter your choice (1-4):");
+			selectionString = Cod.next();
+			
+			while (!valid)
+			{
+				if (Cod.isInteger(selectionString))
+				{
+					selection = Integer.parseInt(selectionString);
+					
+					if (selection > 0 && selection < 5)
+						valid = true;
+				}
+						
+				if (!valid)
+				{
+					System.out.println("ERROR: Enter a valid number");
+					System.out.print("Enter your choice (1-4):");
+					selectionString = Cod.next();
+				}
+			}
+			
+			if (selection == 1)
+				areaCircle();
+			else if (selection == 2)
+				areaRectangle();
+			else if (selection == 3)
+				areaTriangle();
+			else;
+							
+		}while (selection !=4);
+	}//main()
+	
+	
+	//Circle area calculation module
+	public static void areaCircle()
+	{
+		double area;
+		double radius;
+		
+		System.out.println();
+		System.out.println("---Area for a Circle---");
+		System.out.print("Enter the radius: ");
+		radius = Cod.nextDouble();
+		
+		if (radius < 1)
+		{
+			do
+			{
+				System.out.println("ERROR: Enter a valid number");
+				System.out.println("Enter the radius: ");
+				radius = Cod.nextDouble();
+			}while (radius < 1);
+		}//if
+		
+		area = (Math.PI) * (Math.pow(radius, 2));
+		
+		System.out.println("The answer is: " + area);
+		
+		System.out.println();
+	}//areaCircle()
+	
+	
+	//Rectangle area calculation module
+	public static void areaRectangle()
+	{
+		double area;
+		double base;
+		double width;
+		
+		System.out.println();
+		System.out.println("---Area for a Rectangle---");
+		System.out.print("Enter the base: ");
+		base = Cod.nextDouble();
+		
+		if (base < 1)
+		{
+			do
+			{
+				System.out.println("ERROR: Enter a valid number");
+				System.out.println("Enter the base: ");
+				base = Cod.nextDouble();
+			}while (base < 1);
+		}
+		
+		System.out.print("Enter the width: ");
+		width = Cod.nextDouble();
+		
+		if (width < 1)
+		{
+			do
+			{
+				System.out.println("ERROR: Enter a valid number");
+				System.out.println("Enter the width: ");
+				width = Cod.nextDouble();
+			}while (width < 1);
+		}//if
+		
+		area = base * width;
+		
+		System.out.println("The answer is: " + area);
+		
+		System.out.println();
+	}//areaRectangle()
+		
+		
+	//Rectangle area calculation module
+	public static void areaTriangle()
+	{
+		double area;
+		double base;
+		double height;
+		
+		System.out.println();
+		System.out.println("---Area for a Triangle---");
+		System.out.print("Enter the base: ");
+		base = Cod.nextDouble();
+		
+		if (base < 1)
+		{
+			do
+			{
+				System.out.println("ERROR: Enter a valid number");
+				System.out.println("Enter the base: ");
+				base = Cod.nextDouble();
+			}while (base < 0);
+		}//if()
+		
+		System.out.print("Enter the height: ");
+		height = Cod.nextDouble();
+		
+		if (height < 1)
+		{
+			do
+			{
+				System.out.println("ERROR: Enter a valid number");
+				System.out.println("Enter the height: ");
+				height = Cod.nextDouble();
+			}while (height < 1);
+		}//if
+		
+		area = base * height * .5;
+		
+		System.out.println("The answer is: " + area);
+		
+		System.out.println();
+	}//areaTriangle()
+		
+}//class
