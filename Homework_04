@@ -1,0 +1,70 @@
+//--------------------------------------------------------------
+//-- Name:       William Quayle
+//-- Class:      CIS-1400 Summer 2015
+//-- Assignment: Homework 4
+//-- File:       Homework_04.java
+//-- Purpose:    Time Calculator
+//--------------------------------------------------------------
+
+package assignments;
+
+import global.Cod;
+
+public class Homework_04 
+{
+	public static void main(String[] args)
+	{
+		//declare variables
+		double seconds;
+		double minutes;
+		double hours;
+		double days;
+		
+		//prompt for number of seconds
+		System.out.print("Enter the number of seconds: ");
+		seconds = Cod.nextDouble();
+		
+		// Filters out entry for minutes
+		if (seconds >= 60 && seconds < 3600)
+		{
+			//Calculate and display how many minutes are entered in seconds
+			minutes = seconds / 60;
+			System.out.print(seconds + " seconds is equal to ");
+			System.out.println(minutes + " minutes.");
+		} 
+		// Filters out entry for hours and minutes
+		else if (seconds >= 3600 && seconds < 86400)
+		{
+			//calculate hours and minutes
+			minutes = seconds /60;
+			hours = seconds / 3600;
+			
+			// Display values of hours and minutes
+			System.out.print(seconds + " seconds is equal to ");
+			System.out.println(minutes + " minutes.");
+			System.out.print(seconds + " seconds is equal to ");
+			System.out.println(hours + " hours.");
+		}
+		// Filter for larger entries lasting days
+		else
+		{
+			//calculate days, hours, and minutes
+			minutes = seconds /60;
+			hours = seconds / 3600;
+			days = seconds / 86400;
+			
+			//display how many minutes
+			System.out.print(seconds + " seconds is equal to ");
+			System.out.println(minutes + " minutes.");
+			
+			//display how many hours
+			System.out.print(seconds + " seconds is equal to ");
+			System.out.println(hours + " hours.");
+			
+			//display how many days
+			System.out.print(seconds + " seconds is equal to ");
+			System.out.println(days+ " days.");
+		}
+		
+	}//main
+}//class
