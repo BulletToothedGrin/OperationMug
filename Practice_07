@@ -1,0 +1,95 @@
+//--------------------------------------------------------------
+//-- Name:       William Quayle
+//-- Class:      CIS-1400 Summer 2015
+//-- Assignment: Practice 7
+//-- File:       Practice_07.java
+//-- Purpose:    Payroll
+//--------------------------------------------------------------
+
+package assignments;
+
+import global.Cod;
+
+public class Practice_07 
+{
+	
+	public static int HOURS_MIN = 0; //global constant for minimum hours
+	public static int HOURS_MAX = 40; //global constant for maximum hours
+	public static double MIN_PAY = 7.50; //global constant for minimum pay rate
+	public static double MAX_PAY = 18.25; //global constant for maximum pay rate
+	
+	public static void main(String[] args) 
+	{
+		
+		double hours; // variable for hours worked
+		double rate; // variable for pay rate
+		double grossPay; // variable for gross pay
+		
+		hours = getHours(); //assigns value for hours worked
+		
+		System.out.println();//intentional blank space
+		
+		rate = getRate(); //assigns value for pay rate
+		
+		grossPay= hours * rate; //calculates value for gross pay
+		
+		System.out.println();//intentional blank space
+		System.out.print("Gross Pay: " + grossPay);//shows gross pay
+		
+	}//main()
+	
+	
+	public static double getHours()
+	{
+		double hoursWorked;//variable for collecting the number of hours worked
+		
+		//prompt and assign value for amount of hours worked.
+		System.out.print("Enter the number of hours worked (0-40): ");
+		hoursWorked = Cod.nextDouble();
+		
+		System.out.println();//intentional blank space
+		
+		//loop for filtering out invalid responses
+		while ((hoursWorked < HOURS_MIN) || (hoursWorked > HOURS_MAX))
+		{
+			//informs user of error and requests valid response
+			System.out.println("ERROR - Invalid number of hours!");
+			System.out.println();
+			System.out.print("Enter the number of hours worked (0-40): ");
+			hoursWorked = Cod.nextDouble();
+			System.out.println();
+			
+		}// loop for improper responses
+		
+		return hoursWorked;		//returns value for hours worked
+		
+	} // getHours()
+
+	
+	public static double getRate()
+	{
+		double payRate; // variable for pay rate
+		
+		//prompt and assign value for pay rate
+		System.out.print("Enter hourly rate(7.5-18.25): ");
+		payRate = Cod.nextDouble();
+		
+		System.out.println();//intentional blank space
+		
+		//loop for filtering out invalid responses
+		while ((payRate < MIN_PAY) || (payRate > MAX_PAY))
+		{
+			//informs user of error and requests valid response
+			System.out.println("ERROR - Invalid number of hourly rate!");
+			System.out.println();
+			System.out.print("Enter hourly rate(7.5-18.25): ");
+			payRate = Cod.nextDouble();
+			System.out.println();
+			
+		}//loop for improper responses
+		
+		return payRate; // returns value for pay rate
+		
+	} // getRate()
+	
+}//class
