@@ -1,0 +1,76 @@
+//--------------------------------------------------------------
+//-- Name:       William Quayle
+//-- Class:      CIS-1400 Summer 2015
+//-- Assignment: Homework 6
+//-- File:       Homework_06.java
+//-- Purpose:    Pythagorean theorem
+//--------------------------------------------------------------
+
+
+package assignments;
+
+import global.Cod;
+
+public class Homework_06 
+{
+	public static void main(String[] args)
+	{
+		double legA=1; //value for the length of the first side
+		double legB; //value for the length of the second side
+		
+		do //loop to repeat application until '0' is entered
+		{	
+			//prompt for input for leg 1/A
+			System.out.print("Enter the length of leg #1 <or 0 to exit> :");
+			legA= Cod.nextDouble();
+			
+			while (legA < 0)//filter for invalid entries
+			{	
+				//prompt for user to enter valid number to assign to leg 1/A
+				System.out.println("Invalid entry. Please enter number greater than 0.");
+				System.out.print("Enter the length of leg #1 <or 0 to exit> :");
+				legA= Cod.nextDouble();
+			}
+			
+			if (legA > 0)//filter for valid entries to continue application
+			{
+				//prompts for value of leg B/2
+				System.out.print("Enter the length of leg #2: ");
+				legB = Cod.nextDouble();
+				
+				while (legB < 0)//filter for invalid entries
+				{
+					//request for user to enter valid entry to assign to leg 2/B
+					System.out.println("Invalid entry.");
+					System.out.print("Enter the length of leg #2: ");
+					legB = Cod.nextDouble();
+				}
+						
+				System.out.println();//intentional blank space
+				
+				//result display
+				System.out.println("The length of hypotenuse is " + hypotenuseLength (legA, legB));
+				
+				System.out.println();//intentional blank space
+			}
+		}while (legA != 0);//loop will execute as long as 0 is not entered
+	}//main()
+	
+	
+	//calculates the hypotenuse
+	public static double hypotenuseLength(double leg1, double leg2)
+	{
+		double hypotenuse;//value for the length of the hypotenuse
+		
+		//calculation for finding the hypotenuse
+		hypotenuse = (leg1*leg1) + (leg2 * leg2);
+		hypotenuse = Math.sqrt(hypotenuse);
+		
+		//calculation to round the result to the nearest thousandth
+		hypotenuse = hypotenuse * 1000.0;
+		hypotenuse = Math.round(hypotenuse);
+		hypotenuse = hypotenuse / 1000.0;
+
+		return hypotenuse;//returns value for hypotenuse
+	}//hypotenuseLength
+}//class
