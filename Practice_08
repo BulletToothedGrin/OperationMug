@@ -1,0 +1,27 @@
+package assignments;
+
+public class Practice_08
+{
+	public static void main(String[] args)
+	{
+		int [] lotto = new int[7];//array for lottery numbers
+		
+		java.util.Random rand = new java.util.Random();//random number generator
+		
+		for (int i = 0; i < 7; i++)//loop to assign lottery numbers to memory
+		{
+			//assigns random number to space in array memory
+			lotto[i] = rand.nextInt(10);
+		}
+		
+		//Display to show winning lotto numbers
+		System.out.print("The winning lottery numbers are: ");
+		
+		for (int i = 0; i < 7; i++)//loop to display winning numbers
+		{
+			System.out.print(lotto[i] + " ");//displays each array value
+		}
+
+	}//main()
+	
+}//class
