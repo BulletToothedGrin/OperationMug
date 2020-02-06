@@ -1,0 +1,55 @@
+//--------------------------------------------------------------
+//-- Name:       William Quayle
+//-- Class:      CIS-1400 Summer 2015
+//-- Assignment: Practice 3
+//-- File:       Practice_03.java
+//-- Purpose:    Ticket sales
+//--------------------------------------------------------------
+package assignments;
+
+import global.Cod;
+
+public class Practice_03 
+{
+	public static final double PRICE_A = 15.25; //price for Class A tickets
+	public static final double PRICE_B = 11.5; //price for Class B tickets
+	public static final double PRICE_C = 9; //price for Class C tickets
+		
+	public static void main(String[] args) 
+	{
+		int numA; //amount of Class A tickets sold
+		int numB; //amount of Class B tickets sold
+		int numC; //amount of Class C tickets sold
+		
+		//Prompt for Class A ticket sales and calculate income
+		System.out.print("Enter number of class A tickets: ");
+		numA= Cod.nextInt();
+				
+		//Prompt for Class B ticket sales and calculate income
+		System.out.print("Enter number of class B tickets: ");
+		numB= Cod.nextInt();
+		
+		//Prompt for Class C ticket sales and calculate income
+		System.out.print("Enter number of class C tickets: ");
+		numC= Cod.nextInt();
+		
+		//Display income from ticket sales
+		displaySales(numA, numB, numC);
+				
+	}//main()
+		
+	
+	//Module that calculates and displays sales
+	public static void displaySales(int numberOfA, int numberOfB, int numberOfC)
+	{
+		double income; //total value of ticket sales.
+		
+		//calculate and display ticket sales
+		income = numberOfA * PRICE_A + numberOfB * PRICE_B + numberOfC * PRICE_C;
+		System.out.println();
+		System.out.println();
+		System.out.println("Total: $" + income);
+		
+	}//displaySales
+	
+}//class
