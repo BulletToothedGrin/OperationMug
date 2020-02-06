@@ -1,0 +1,42 @@
+//--------------------------------------------------------------
+//-- Name:       William Quayle
+//-- Class:      CIS-1400 Summer 2015
+//-- Assignment: Homework 2
+//-- File:       Homework 02.java
+//-- Purpose:    Acreage calculator
+//--------------------------------------------------------------
+
+package assignments;
+
+import global.Cod;
+
+public class Homework_02 
+
+{
+	public static void main(String[] args) 
+	{
+		//defining three variables for application
+		double width; //property width in feet
+		double length; //property length in feet
+		double acre;  //property area in acres
+		
+		//prompt and retrieve values for variables
+		System.out.print("Enter the width of the property in feet: ");
+		width = Cod.nextDouble();
+		System.out.print("Enter the length of the property in feet: ");
+		length = Cod.nextDouble();
+		
+		//calculate the acreage for the property
+		acre = length * width / 43560;
+		
+		//intentional blank space
+		System.out.println();
+		System.out.println();
+		
+		//display the acreage result 	
+		System.out.print("The property is " + acre + " acres!");
+		System.out.println();
+		
+	}//main
+
+}//class
