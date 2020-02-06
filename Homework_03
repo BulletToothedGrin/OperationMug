@@ -1,0 +1,55 @@
+//--------------------------------------------------------------
+//-- Name:       William Quayle
+//-- Class:      CIS-1400 Summer 2015
+//-- Assignment: Homework 3
+//-- File:       Homework 03.java
+//-- Purpose:    BMI calculator
+//--------------------------------------------------------------
+
+
+package assignments;
+
+import global.Cod;
+
+public class Homework_03 
+{
+	public static void main(String[] args) 
+	{
+		double pounds;//variable set for weight in pounds
+		int feet;// variable set for height in feet
+		double inches;//variable set for remaining height inches
+		double height;//variable set for overall height in inches
+		
+		
+		//prompt user for weight in pounds. 
+		System.out.print("Pounds: ");
+		pounds=Cod.nextDouble();
+		
+		//prompt user for height in feet
+		System.out.print("Feet: ");
+		feet = Cod.nextInt();
+		
+		//prompt user for remaining inches
+		System.out.print("Inches: ");
+		inches = Cod.nextDouble();
+		
+		height = (feet * 12) + inches;//calculate total height in inches
+		
+		//intentional blank spaces
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		
+		
+		BMICalc (height, pounds);//module to calculate and display BMI
+		
+	}//main()
+	
+	
+	//Calculates and displays BMI 
+	public static void BMICalc(double totalInches, double weight)
+	{
+		//calculates and displays the BMI 
+		System.out.println("Your BMI is "+(weight / (totalInches * totalInches))*703);		
+	}
+}//class
