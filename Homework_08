@@ -1,0 +1,71 @@
+//--------------------------------------------------------------
+//-- Name:       William Quayle
+//-- Class:      CIS-1400 Summer 2015
+//-- Assignment: Homework 8
+//-- File:       Homework_08.java
+//-- Purpose:    Address search
+//--------------------------------------------------------------
+
+package assignments;
+
+import global.Cod;
+
+public class Homework_08 
+{
+	public static void main(String[] args) 
+	{
+		String[] name = new String[10];//variable for name array
+		String[] phone = new String[10];//variable for phone array
+		String[] email = new String[10];//variable for email array
+		String search; //search string
+		int counter = 0; //counter variable
+				
+		for (int i = 0; i < 10; i++) //Loop to fill address book entries
+		{
+			//Prompts and assigns name variable
+			System.out.print(String.format("%-25s","Enter name #" + ( i + 1 ) + ":"));
+			name[i] = Cod.next();
+			
+			//Prompts and assigns phone number variable
+			System.out.print(String.format("%-25s","Enter phone number #" + ( i + 1 ) + ":"));
+			phone[i] = Cod.next();
+			
+			//prompts and assigns email variable
+			System.out.print(String.format("%-25s","Enter email address #" + ( i + 1 ) + ":"));
+			email[i] = Cod.next();
+			
+			System.out.println();//intentional blank space
+		}
+		
+		do //loop for searching entries
+		{
+			//Prompts and assigns search string
+			System.out.print("Enter search value");
+			search = Cod.next();
+			
+			//Prints out disply table
+			System.out.println("Name:                Phone:           Email: ");
+			System.out.println("-----                ------           -------");
+			
+			//Conditional statement that will filter out null entries
+			if (!(search.equals("")))
+					while (counter < 10) //repeats only for the amount of entries there are
+						{
+							//prints out results of search function
+							if (name[counter].indexOf(search) != -1)
+								{
+									//prints out results of search
+									System.out.print(String.format("%-20s",name[counter]));
+									System.out.print(String.format("%-15s",phone[counter]));
+									System.out.println(String.format("%-20s",email[counter]));
+									counter++;
+								}	
+							else //no match is found, next search initiates
+								counter ++; 
+						}
+			
+		}while (!(search.equals(""))); //terminates loop if nothing is entered
+		
+
+	}//main()
+}//class
