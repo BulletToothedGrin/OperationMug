@@ -1,0 +1,67 @@
+//--------------------------------------------------------------
+//-- Name:       William Quayle
+//-- Class:      CIS-1400 Summer 2015
+//-- Assignment: Homework 10
+//-- File:       Homework_10.java
+//-- Purpose:    Numbers File access
+//--------------------------------------------------------------
+
+package assignments;
+
+import java.io.*;
+import java.util.Scanner;
+
+public class Homework_10 
+{
+	public static void main(String[] args) throws IOException
+	{
+		//open source file
+		String fileName = "Numbers.txt";
+		Scanner inputFile = new Scanner (new File(fileName));
+		
+		int count = 0;//number of values in file
+		double[] numbers = new double [1000]; //array for each entry in file
+		double max = 0; //highest value in file
+		double min = 0; //lowest value in file
+		double total = 0; //total of all values
+		double average = 0; //average of all values
+		
+		//assign value to array for each number from source file.
+		do
+		{
+			numbers[(count)] = inputFile.nextDouble();
+			count ++;
+		}while(inputFile.hasNext());
+		
+		inputFile.close();//close source file
+
+		//assign initial min value
+		if (numbers[1] < numbers [2])
+			min = numbers[1];
+		else
+			min = numbers[2];
+				
+		//determine min/max/total values from list
+		for (int i = 0; i < count ; i++)
+		{
+			//determine if entry is largest
+			if (numbers[i] > max)
+				max = numbers[i];
+			
+			//determine if entry is smallest
+			if (numbers[i] < min)
+				min = numbers[i];
+			
+			total += numbers[i];//total the entries
+		}//for()
+		
+		average= total / count;//calculate average
+		
+		//display number statistics from file 
+		System.out.println(String.format("%-15s","Count:") + String.format("%,5d", count));
+		System.out.println(String.format("%-15s","Maximum:") + String.format("%,9.3f", max));
+		System.out.println(String.format("%-15s","Minimum:") + String.format("%,9.3f", min));
+		System.out.println(String.format("%-15s","Total:") + String.format("%,9.3f", total));
+		System.out.println(String.format("%-15s","Average:") + String.format("%,9.3f", average));
+	}//main ()
+}//class
