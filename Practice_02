@@ -1,0 +1,66 @@
+//--------------------------------------------------------------
+//-- Name:       William Quayle
+//-- Class:      CIS-1400 Summer 2015
+//-- Assignment: Practice 2
+//-- File:       Practice_02.java
+//-- Purpose:    Sales Tax
+//--------------------------------------------------------------
+
+package assignments;
+
+import global.Cod;
+
+public class Practice_02
+{
+	public static void main(String[] args) 
+	{
+	
+	// Item variables
+	double item1; //variable for item 1
+	double item2; //variable for item 2
+	double item3; //variable for item 3
+	double item4; //variable for item 4
+	double item5; //variable for item 5
+		
+	// Total variables
+	double subtotal; //variable for subtotal
+	double salestax; //variable for the sales tax
+	double total; //variable for the total
+		
+	// assign value to item 1
+	System.out.print("Enter price for item #1: $");
+	item1 = Cod.nextDouble();
+	
+	// assign value to item 2
+	System.out.print("Enter price for item #2: $");
+	item2 = Cod.nextDouble();
+
+	// assign value to item 3
+	System.out.print("Enter price for item #3: $");
+	item3 = Cod.nextDouble();
+	
+	// assign value to item 4
+	System.out.print("Enter price for item #4: $");
+	item4 = Cod.nextDouble();
+	
+	// assign value to item 5
+	System.out.print("Enter price for item #5: $");
+	item5 = Cod.nextDouble();
+	
+	System.out.println(); //intentional blank space
+		
+	// Calculate value of subtotal and display the value
+	subtotal = item1 + item2 + item3 + item4 + item5;	
+	System.out.println("Subtotal: $" + subtotal); 
+	
+	// Calculate and display the 6% sales tax value 
+	salestax = .06 * subtotal; 
+	System.out.println("Tax: $" + salestax);
+
+	// Calculate and display the total
+	total = subtotal + salestax;
+	System.out.println("Total: $" + total);
+	
+	
+	} // main
+} // class
