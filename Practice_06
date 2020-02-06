@@ -1,0 +1,46 @@
+//--------------------------------------------------------------
+//-- Name:       William Quayle
+//-- Class:      CIS-1400 Summer 2015
+//-- Assignment: Practice 6
+//-- File:       Practice_06.java
+//-- Purpose:    Kinetic Energy
+//--------------------------------------------------------------
+
+package assignments;
+
+import global.Cod;
+
+public class Practice_06 
+{
+	public static void main(String[] args)
+	{
+		double kilograms; //variable for mass of object
+		double velocity; //variable for object velocity
+		
+		//Prompt user for object mass
+		System.out.print("Enter the mass of the ovject in Kilograms: ");
+		kilograms = Cod.nextDouble();
+		
+		//Prompt user for object velocity
+		System.out.print("Enter the velocity of the object in meters per second: ");
+		velocity = Cod.nextDouble();
+		
+			
+		System.out.println();//intentional blank
+		
+		//calculate and display kinetic energy of object
+		System.out.println("Joules: " + kineticEnergy(kilograms, velocity));
+		
+	}//main()
+	
+	//function to calculate Kinetic Energy (KE) 
+	public static double kineticEnergy (double mass, double mps)
+	{
+		double joules;//declares variable for holding KE value.
+		
+		joules = 0.5 * mass * (mps * mps);//calculates KE and assigns value to variable joules
+		
+		return joules;//returns kinetic energy value in joules.
+	}//kineticEnergy()
+	
+}//class
