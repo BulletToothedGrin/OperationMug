@@ -1,0 +1,39 @@
+//--------------------------------------------------------------
+//-- Name:       William Quayle
+//-- Class:      CIS-1400 Summer 2015
+//-- Assignment: Practice 3
+//-- File:       Practice_03.java
+//-- Purpose:    Factorial calculator
+//--------------------------------------------------------------
+package assignments;
+
+import global.Cod;
+
+public class Homework_05b {
+	public static void main(String[] args) 
+	{
+		int n=1; // counting value that controls loop and calculates factorial
+		int integer; // number that user will enter 
+		int factorial=1; // factorial result of integer that is entered
+		
+		//prompt and assign value for integer
+		System.out.print("Enter a integer: ");
+		integer = Cod.nextInt();
+		
+		System.out.print(integer + "! = ");//display first part of result
+		
+		
+		while (n < integer)
+		{
+			//display factorial equation step and calculate value
+			System.out.print(n + " x "); 
+			n ++;
+			factorial = factorial * n;
+		
+		}//Loop that will display and calculate factorial equation
+		
+		System.out.print(n + " = " + factorial);//displays resulting factorial
+	
+	}//main()
+	
+}//class
