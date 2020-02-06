@@ -1,0 +1,37 @@
+//--------------------------------------------------------------
+//-- Name:       William Quayle
+//-- Class:      CIS-1400 Summer 2015
+//-- Assignment: Practice 5b
+//-- File:       Practice_05b.java
+//-- Purpose:    Addition Calculator pt2
+//--------------------------------------------------------------
+
+package assignments;
+
+import global.Cod;
+
+public class Practice_05b 
+{
+	public static void main(String[] args)
+	{
+		int num = 1; //variable to use for input, initialized at 1 to run app
+		int sum = 0; //variable to use for sum of numbers
+		
+		//loop that takes numbers to add together
+		while (num != 0)
+		{
+			//prompt for number to be added
+			System.out.print("Enter a positive number (or zero when done): ");
+			num = Cod.nextInt();
+
+			//filters out invalid entries
+			if (num >= 1) 
+				sum += num;
+				
+		}// loop runs while a positive number greater than '0' is entered
+		
+		System.out.println();//intentional blank space
+		System.out.println("Sum: " + sum); //displays sum of all numbers
+		
+	}//main()
+}//class
