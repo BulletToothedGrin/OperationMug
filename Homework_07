@@ -1,0 +1,69 @@
+//--------------------------------------------------------------
+//-- Name:       William Quayle
+//-- Class:      CIS-1400 Summer 2015
+//-- Assignment: Homework 6
+//-- File:       Homework_06.java
+//-- Purpose:    Speed Trap
+//--------------------------------------------------------------
+
+package assignments;
+
+import global.Cod;
+
+public class Homework_07 
+{
+	public static void main(String[] args) 
+	{
+		int speedLimit;//variable for the speed limit
+		int vehicleSpeed;//variable for the speed of the vehicle
+		int ticketCategory;//variable for the value of the ticket
+	
+		//prompt for the speed limit
+		System.out.print("Please enter the speed limit: ");
+		speedLimit = Cod.nextInt();
+		
+		//filter for too low/high speed limits
+		while (speedLimit < 20 || speedLimit > 70 )
+		{
+			//notifies of invalid entry and prompts for valid speed liit
+			System.out.println("ERROR: Speed limit must be between 20 and 70");
+			System.out.println();
+			System.out.print("Please enter the speed limit: ");
+			speedLimit = Cod.nextInt();
+		}
+		
+		//prompt for vehicle speed
+		System.out.print("Please enter vehicle speed: ");
+		vehicleSpeed = Cod.nextInt();
+
+		//filter for invalid vehicle speeds
+		while (speedLimit >= vehicleSpeed)
+		{
+			//prompt for valid vehicle speeds
+			System.out.println("ERROR: Vehicle speed must be greater than speed limit");
+			System.out.println();
+			System.out.print("Please enter vehicle speed: ");
+			vehicleSpeed = Cod.nextInt();
+		}
+		
+		//determines how large a fine is warranted given speed
+		ticketCategory = vehicleSpeed - speedLimit;
+				
+		//filter for vehicles traveling in excess of 20 over the limit
+		if (ticketCategory > 20)
+			System.out.println("Exceeded speed limit by 21+ MPH. $300 fine.");
+		
+		//fine for vehicles traveling 16-20 over the limit
+		else if (ticketCategory > 15)
+			System.out.println("Exceeded speed limit by 16-20 MPH. $150 fine.");
+		
+		//fine for vehicles traveling 11-15 over the limit
+		else if (ticketCategory > 10)
+			System.out.println("Exceeded speed limit by 11-15 MPH. $75 fine.");
+		
+		//fine for vehicles traveling up to 10 mph over the limit
+		else 
+			System.out.println("Exceeded speed limit by 1-10 MPH. $50 fine.");
+		
+	}//main()	
+}//class
