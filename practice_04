@@ -1,0 +1,55 @@
+//--------------------------------------------------------------
+//-- Name:       William Quayle
+//-- Class:      CIS-1400 Summer 2015
+//-- Assignment: Practice 4
+//-- File:       Practice_04.java
+//-- Purpose:    Dollar Game
+//--------------------------------------------------------------
+
+package assignments;
+
+import global.Cod;
+
+public class Practice_04
+{
+	public static void main(String[] args) 
+	{
+	
+		//define variables
+		int pennyAmt; //variable for amount of pennies
+		int nickelAmt; //variable for amount of nickels
+		int dimeAmt; //variable for amount of dimes
+		int quarterAmt; //variable for amount of quarters
+		int totalVal; //variable for total value of combined coins
+		
+		//prompt for amount of pennies
+		System.out.print("Enter number of pennies: ");
+		pennyAmt = Cod.nextInt();
+		
+		//prompt for amount of nickels
+		System.out.print("Enter number of nickels: ");
+		nickelAmt= Cod.nextInt();
+		
+		//prompt for amount of dimes
+		System.out.print("Enter number of dimes: ");
+		dimeAmt = Cod.nextInt();
+		
+		//prompt for amount of quarters
+		System.out.print("Enter number of quarters: ");
+		quarterAmt = Cod.nextInt();
+	
+		//calculate total value of coins
+		totalVal = pennyAmt + (nickelAmt * 5) +(dimeAmt * 10) + (quarterAmt*25);
+		
+		// Intentional blank space
+		System.out.println();
+		System.out.println();
+		
+		// Determine if user has won or lost
+		if (totalVal == 100)
+			System.out.println("You win!!! That's exactly a dollar.");
+		else
+			System.out.println("Sorry, that's " + totalVal + " cents.");
+		
+	} // main
+} // class
