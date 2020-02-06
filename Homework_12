@@ -1,0 +1,61 @@
+//--------------------------------------------------------------
+//-- Name:       William Quayle
+//-- Class:      CIS-1400 Summer 2015
+//-- Assignment: Homework 12
+//-- File:       Homework_12.java
+//-- Purpose:    Numbers File access
+//--------------------------------------------------------------
+
+package assignments;
+
+import global.Cod;
+
+public class Homework_12 
+{
+	public static void main(String[] args) 
+	{
+		String text;
+		
+		do 
+		{
+			System.out.println();
+			System.out.println("Please enter some text or press <ENTER> to exit:");
+			text = Cod.next();
+			char chr;
+			int vowel = 0;
+			int sum = 0;
+			
+			System.out.println();
+			System.out.println();
+			
+			if(!(text.length() == 0))
+			{
+				System.out.print(String.format("%-15s","Vowels:"));
+				System.out.println(vowel);
+					System.out.println(vowel(text));
+
+				
+					
+					//if (text.charAt(i-1) == ' ')
+					{
+						
+					}
+					 
+					
+				}//for
+
+			}
+		}while (!(text.length() == 0));
+	}//main()
+
+	public static String vowel(String str)
+	{
+		chr = str.charAt(i);
+			char upperChar = Character.toUpperCase(chr); 
+			if (upperChar == 'A' ||upperChar ==  'E' || upperChar ==  'I')
+				vowel++;
+			else if (upperChar ==  'O' || upperChar == 'U')
+				vowel++;
+	}
+
+}//class
